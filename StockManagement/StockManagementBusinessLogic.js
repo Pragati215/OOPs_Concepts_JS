@@ -1,7 +1,15 @@
-const fs = require("fs");
+/*******************************************************************************
+ * @problem : Program to read stock names ,number of share & share price 
+ *            and print stock result
+ * @fileName : StockManagementBusinessLogic.js
+ * @Auther  : Pragati Dhakane 
+ *******************************************************************************/
+
+ const fs = require("fs");
 const stockManagementData = fs.readFileSync('./StockManagement.JSON');
 let data = JSON.parse(stockManagementData);
 
+//class defined to calculate shares of each company & class exported to Main logic
 class StockManagement {
 
     constructor(shareName, numberOfShare, sharePrice) {
@@ -9,12 +17,13 @@ class StockManagement {
         this.numberOfShare = numberOfShare;
         this.sharePrice = sharePrice;
     }
+
     tcs() {
         let tcsTotal = 0;
         data.TCS.forEach(element => {
             tcsTotal = element.numberOfShare * element.sharePrice
         });
-        return " TCS Total shares is :" + tcsTotal;
+        return " TCS Total shares :" + tcsTotal;
     }
 
     infosys() {
@@ -22,7 +31,7 @@ class StockManagement {
         data.Infosys.forEach(element => {
             infosysTotal = element.numberOfShare * element.sharePrice
         });
-        return " Infosys Total shares is :" + infosysTotal;
+        return " Infosys Total shares :" + infosysTotal;
     }
 
     vipro() {
@@ -30,7 +39,7 @@ class StockManagement {
         data.Vipro.forEach(element => {
             viproTotal = element.numberOfShare * element.sharePrice
         });
-        return " Vipro Total shares is :" + viproTotal;
+        return " Vipro Total shares :" + viproTotal;
     }
 }
 module.exports = new StockManagement;
