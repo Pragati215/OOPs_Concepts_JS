@@ -14,21 +14,22 @@ const StockManagement = require('./StockManagementBusinesslogic');
 function accountManagement() {
 
       for (i = 1; i < 10; i++) {
-            let input = readlineSync.question("enter choice : 1.TCS 2.Infosys 3.Vipro 4.exit:");
+            let input = readlineSync.question("enter choice : 1.Add Share 2.Print Report 3.Total Share 4.Exit:");
             if (input == 4) return;
 
             switch (parseInt(input)) {
                   case 1:
-                        console.log(data.TCS);
-                        console.log(StockManagement.tcs());
+                        let Company = readlineSync.question("enter name of company: ");
+                        let numOfShares = readlineSync.questionInt("enter number of shares: ");
+                        let price = readlineSync.questionInt("enter price: ");
+                        StockManagement.addShare(Company, numOfShares, price);
+                        StockManagement.save();
                         break;
                   case 2:
-                        console.log(data.Infosys);
-                        console.log(StockManagement.infosys());
+                        console.log(StockManagement.display());
                         break;
                   case 3:
-                        console.log(data.Vipro);
-                        console.log(StockManagement.vipro());
+                        console.log(StockManagement.calculation());
                         break;
                   case 4:
                         console.log("Exit");

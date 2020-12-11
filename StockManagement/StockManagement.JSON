@@ -1,23 +1,25 @@
 {
-    "TCS": [
-        {
-            "shareName": "Naveen",
-            "numberOfShare": "8",
-            "sharePrice": "5000"
-        }
-    ],
-    "Infosys": [
-        {
-            "shareName": "Manoj",
-            "numberOfShare": "10",
-            "sharePrice": "8000"
-        }
-    ],
-    "Vipro": [
-        {
-            "shareName": "Aananta",
-            "numberOfShare": "9",
-            "sharePrice": "10000"
-        }
-    ]
+  "company": [
+    {
+      "shareName": "Naveen",
+      "numberOfShare": "8",
+      "sharePrice": "5000"
+    },
+    {
+      "shareName": "Manoj",
+      "numberOfShare": "10",
+      "sharePrice": "8000"
+    },
+    {
+      "shareName": "Aananta",
+      "numberOfShare": "9",
+      "sharePrice": "10000"
+    },
+    {
+      "shareName": "tcs",
+      "numberOfShares": 5,
+      "sharePrice": 500
+    }
+   
+  ]
 }

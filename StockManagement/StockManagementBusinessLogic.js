@@ -5,7 +5,7 @@
  * @Auther  : Pragati Dhakane 
  *******************************************************************************/
 
- const fs = require("fs");
+const fs = require("fs");
 const stockManagementData = fs.readFileSync('./StockManagement.JSON');
 let data = JSON.parse(stockManagementData);
 
@@ -18,28 +18,37 @@ class StockManagement {
         this.sharePrice = sharePrice;
     }
 
-    tcs() {
-        let tcsTotal = 0;
-        data.TCS.forEach(element => {
-            tcsTotal = element.numberOfShare * element.sharePrice
-        });
-        return " TCS Total shares :" + tcsTotal;
+    stockAccount() {
+
+        data.company[data.company.length] = [];
     }
 
-    infosys() {
-        let infosysTotal = 0;
-        data.Infosys.forEach(element => {
-            infosysTotal = element.numberOfShare * element.sharePrice
-        });
-        return " Infosys Total shares :" + infosysTotal;
+    addShare(shareName, numberOfShare, sharePrice) {
+        let stock = {
+
+            "shareName": shareName,
+            "numberOfShares": numberOfShare,
+            "sharePrice": sharePrice
+
+        }
+        data.company[data.company.length] = stock
+
     }
 
-    vipro() {
-        let viproTotal = 0;
-        data.Vipro.forEach(element => {
-            viproTotal = element.numberOfShare * element.sharePrice
-        });
-        return " Vipro Total shares :" + viproTotal;
+    display() {
+        return data;
     }
+
+    calculation() {
+        let shareTotal = 0;
+        data.company.forEach(element => {
+            shareTotal = element.sharePrice * element.numberOfShare
+        });
+        return " Total shares of company is Rs" + shareTotal;
+    }
+    save() {
+        fs.writeFileSync('./StockManagement.JSON', JSON.stringify(data, null, 2));
+    }
+
 }
 module.exports = new StockManagement;
