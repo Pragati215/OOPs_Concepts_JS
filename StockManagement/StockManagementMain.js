@@ -20,8 +20,8 @@ function accountManagement() {
             switch (parseInt(input)) {
                   case 1:
                         let Company = readlineSync.question("enter name of company: ");
-                        let numOfShares = readlineSync.questionInt("enter number of shares: ");
-                        let price = readlineSync.questionInt("enter price: ");
+                        let numOfShares = readlineSync.question("enter number of shares: ");
+                        let price = readlineSync.question("enter price: ");
                         StockManagement.addShare(Company, numOfShares, price);
                         StockManagement.save();
                         break;

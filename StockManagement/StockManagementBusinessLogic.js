@@ -18,7 +18,7 @@ class StockManagement {
         this.sharePrice = sharePrice;
     }
 
-    stockAccount() {
+    stock() {
 
         data.company[data.company.length] = [];
     }
@@ -40,11 +40,17 @@ class StockManagement {
     }
 
     calculation() {
-        let shareTotal = 0;
-        data.company.forEach(element => {
-            shareTotal = element.sharePrice * element.numberOfShare
-        });
-        return " Total shares of company is Rs" + shareTotal;
+         let totalShare = 0;
+         data.company.forEach(element => {
+
+            totalShare = totalShare + parseInt(element.sharePrice) * parseInt(element.numberOfShares)
+         });
+         data.company.forEach(element => {
+             console.log(element.shareName + ' shares is rs  ' + element.sharePrice * element.numberOfShares);
+         });
+
+        return'total stocks shares is  ' + totalShare + "rs";
+    
     }
     save() {
         fs.writeFileSync('./StockManagement.JSON', JSON.stringify(data, null, 2));

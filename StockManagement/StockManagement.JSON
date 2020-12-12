@@ -1,25 +1,19 @@
 {
   "company": [
     {
-      "shareName": "Naveen",
-      "numberOfShare": "8",
+      "shareName": "vipro",
+      "numberOfShares": "100",
       "sharePrice": "5000"
     },
     {
-      "shareName": "Manoj",
-      "numberOfShare": "10",
-      "sharePrice": "8000"
-    },
-    {
-      "shareName": "Aananta",
-      "numberOfShare": "9",
-      "sharePrice": "10000"
-    },
-    {
       "shareName": "tcs",
-      "numberOfShares": 5,
-      "sharePrice": 500
+      "numberOfShares": "100",
+      "sharePrice": "2000"
+    },
+    {
+      "shareName": "vector",
+      "numberOfShares": "100",
+      "sharePrice": "5000"
     }
-   
   ]
 }
